@@ -1,0 +1,13 @@
+pid,pname,pqty,pcat,price,stock_status,inventory_value
+101,Laptop,15,Electronics,899.99,In Stock,13499.85
+102,Wireless Mouse,50,Electronics,25.5,In Stock,1275.0
+103,Mechanical Keyboard,30,Electronics,75.0,In Stock,2250.0
+104,Coffee Maker,12,Home Goods,45.99,In Stock,551.88
+105,Desk Lamp,40,Home Goods,18.25,In Stock,730.0
+106,Office Chair,8,Furniture,120.0,Low Stock,960.0
+107,Water Bottle,100,Accessories,12.5,In Stock,1250.0
+108,Backpack,25,Accessories,55.0,In Stock,1375.0
+109,Smartphone,20,Electronics,699.0,In Stock,13980.0
+110,Notebook,200,Stationery,4.99,In Stock,998.0
+1,1,1,1,1.0,Low Stock,1.0
+7,meme,7,7,7.0,Low Stock,49.0
