@@ -1,5 +1,5 @@
 from utils import menu 
-from function_crud import inputData, view_product
+from function_crud import inputData, view_product, update_product, delete_product
    
 def task_option():
     while True:
@@ -10,6 +10,10 @@ def task_option():
                 inputData()
             case 2:
                 view_product()
+            case 3:
+                update_product()
+            case 4:
+                delete_product()
             case 6:
                 print("Exit.....")
                 break

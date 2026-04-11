@@ -10,8 +10,8 @@ def inputData():
     code = f"P{input("Enter the code : ")}"
     name = input("Enter the name: ")
     qty = int(input("Enter the quantity: "))
-    price = float(input("Enter the the unit price($): "))
-    discount = int(input("Enter the discount(%): "))
+    price = float(input("Enter the unit price($): "))
+    discount = float(input("Enter the discount(%): "))
     
     # update the product list data
     pt.append({"code": code, "name": name, "qty": qty, "price": price, "discount": discount})
@@ -37,3 +37,42 @@ def view_product():
         print(f"{product['code']:<5} | {product['name']:<30} | {product['qty']:>5} | ${product['price']:>9.2f} | ${product['discount']:>9.2f}")
         
     print("\n")
+    
+def update_product():
+    pt = load_file(file_name)
+    update_code = f"P{input("Enter the code : ")}"
+    
+    update_status = False
+    
+    for p in pt:
+        if update_code in p["code"]:
+            p["name"] = input("Enter the new name: ")
+            p["qty"] = int(input("Enter the new quantity: "))
+            p["price"] = float(input("Enter the new unit price($): "))
+            p["discount"] = int(input("Enter the new discount(%): "))
+            update_status = True
+    
+    if update_status :
+        print("Update successfully..")
+    else:
+        print("Product not found!!..")
+
+    save_file(file_name,pt)
+
+def delete_product():
+    pt = load_file(file_name)
+    delete_code = f"P{input("Enter the code : ")}"
+    
+    delete_status = False
+    
+    for p in pt:
+        if delete_code in p["code"]:
+            pt.remove(p)
+            delete_status = True
+    
+    if delete_status :
+        print("Delete successfully..")
+    else:
+        print("Product not found!!..")
+
+    save_file(file_name,pt)
