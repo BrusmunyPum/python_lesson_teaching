@@ -1,5 +1,5 @@
 from utils import menu 
-from function_crud import inputData, view_product, update_product, delete_product
+from function_crud import inputData, view_product, update_product, delete_product, check_go_or_back
    
 def task_option():
     while True:
