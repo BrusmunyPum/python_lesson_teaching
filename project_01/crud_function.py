@@ -61,12 +61,66 @@ def view_income():
 
 
 def update_income():
-    pass
-
-
+    income_list = load_income_file(file_name_income)
+    
+    update_id = int(input("Enter Income ID to update : "))
+    while True:
+        print("===================== UPDATE MENU =================")
+        print("1. Name\n2. Description\n3. Amount\n4. Exit")
+        print("===================================================")
+        up_op = int(input("Enter option that you want to update: "))
+        up_check = False
+        
+        # break loop 
+        if up_op == 4:
+            print("Exit Update.....")
+            break
+        
+        # default ivaliad input choose
+        if up_op not in [1,2,3]:
+            print("Please input a number between 1-4")
+            continue
+        
+        # update each feature
+        for income in income_list:
+            if update_id == income["iid"]:
+                match up_op:
+                    case 1:
+                        income["iname"] = input("Enter the new income name: ")
+                        
+                    case 2:
+                        income["idescription"] = input("Enter the new Income description: ")
+                    
+                    case 3:
+                        income["iamount"] = float(input("Enter the new Amount: "))
+                
+                up_check = True
+                break
+            
+        if not up_check:
+            print(f"Income by this id {update_id} not found...!!")
+        else:
+            save_income_file(file_name_income,income_list)
+            print("Update successfully..............")
+                        
+                        
 def delete_income():
-    pass
+    income_list = load_income_file(file_name_income)
+    
+    delete_id = int(input("Enter Income ID which want to delete: "))
+    del_check = False
+    
+    for income in income_list:
+        if delete_id == income["iid"]:
+            income_list.remove(income)
+            del_check = True
 
+    if not del_check:
+        print(f"This Income id: {delete_id} is not found..")
+        
+    else:
+        save_income_file(file_name_income,income_list)
+        print("Delete Iccome successfully.....")
 
 # for Expense
 

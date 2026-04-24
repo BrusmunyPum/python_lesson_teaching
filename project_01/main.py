@@ -1,7 +1,7 @@
 # income = i_name, i_date, i_description, i_amount
 # expense = e_name, e_date, e_description, e_amount
 
-from crud_function import create_income, view_income
+from crud_function import create_income, view_income, update_income, delete_income
 from utilts import main_menu, menu_expense, menu_income
 
 def main():
@@ -22,12 +22,11 @@ def main():
                             view_income()
                             
                         case 3:
-                            # update
-                            pass
+                            update_income()
                         
                         case 4:
                             # delete
-                            pass
+                            delete_income()
                         
                         case 5:
                             print("Exit income proccess......")

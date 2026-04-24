@@ -1,8 +1,8 @@
 # # variabel = [element or item]
 
-# my_list = ["Muny", 12, 34, 54, True, False, ["Me", 4, 5], 34,34,34]
-
-
+my_list = ["Muny", 12, 34, 54, True, False, ["Me", 4, 5], 34,34,34]
+my_list.remove(12)
+print(my_list)
 # # for i in my_list:
 # #     print(i)
 
@@ -33,5 +33,5 @@
 # print(my_list.count(34))
 
 
-test1 = [{"name": "muny", "age":21}]
-print(test1)
+# test1 = [{"name": "muny", "age":21}]
+# print(test1)
